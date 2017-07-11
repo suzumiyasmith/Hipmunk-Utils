@@ -7,8 +7,8 @@ license:             BSD3
 license-file:        LICENSE
 author:              Suzumiya
 maintainer:          suzumiyasmith@gmail.com
-copyright:           2017 Suzumiya
-category:            Web
+copyright:           Copyright (C) 2016-2017 Suzumiya
+category:            Physics, Game
 build-type:          Simple
 extra-source-files:  README.md
 cabal-version:       >=1.10
