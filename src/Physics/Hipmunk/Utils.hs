@@ -33,3 +33,24 @@ lineSegment (V2 startX startY) (V2 endX endY) =
 
 polygon :: [V2 Double] -> ShapeType
 polygon = Polygon . fmap (\(V2 x y) -> Vector x y)
+
+addImpulse :: Body -> V2 Double -> V2 Double -> IO ()
+addImpulse b (V2 x1 x2) (V2 y1 y2) = applyImpulse b (Vector x1 x2) (Vector y1 y2)
+
+addForce :: Body -> V2 Double -> V2 Double -> IO ()
+addForce b (V2 x1 x2) (V2 y1 y2) = applyForce b (Vector x1 x2) (Vector y1 y2)
+
+getPosition :: Body -> IO (V2 Double)
+getPosition b = do
+  (Vector x y) <- get $ position b
+  return $ V2 x y
+
+getVelocity :: Body -> IO (V2 Double)
+getVelocity b = do
+  (Vector x y) <- get $ velocity b
+  return $ V2 x y
+
+getForce :: Body -> IO (V2 Double)
+getForce b = do
+  (Vector x y) <- get $ force b
+  return $ V2 x y
